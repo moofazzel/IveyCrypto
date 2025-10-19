@@ -47,7 +47,17 @@ function StatCard({
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-[#0b0b10] py-20">
+    <section
+      className="relative overflow-hidden  md:py-20 lg:py-[140px]"
+      style={{
+        background:
+          "linear-gradient(rgba(12, 9, 18, 0.99), rgba(12, 9, 18, 0.93)), url('/images/about/bg.svg')",
+
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* subtle grid in the back */}
       <div
         aria-hidden
@@ -108,11 +118,11 @@ export default function About() {
             <div className="relative mx-auto aspect-[4/3] w-full max-w-[560px]">
               {/* Replace with your cubes visual */}
               <Image
-                src="/images/hero/cubes.png"
+                src="/images/about/abt.jpg"
                 alt="Floating crypto cubes"
                 fill
                 priority
-                className="rounded-3xl border border-white/10 object-cover shadow-2xl"
+                className="rounded-3xl "
               />
               {/* glow accents */}
               <span className="absolute -left-6 top-8 h-16 w-16 rounded-full bg-[linear-gradient(120deg,#5c3afa_0%,#a868fa_50%,#3dabf4_100%)] opacity-50 blur-xl" />
