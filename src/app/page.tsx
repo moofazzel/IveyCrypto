@@ -1,3 +1,4 @@
+import About from "@/components/modules/Home/About";
 import Hero from "@/components/modules/Home/Hero";
 import MarqueeTape from "@/components/modules/Home/MarqueeTape";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Hero />
       <MarqueeTape />
+      <About />
     </>
   );
 }
