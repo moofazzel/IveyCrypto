@@ -12,7 +12,7 @@ const TEXTS = [
   "Next.js Experts",
   "Tailwind UI Design",
   "Creative Branding",
-  "Aptecode Agency",
+
   "Crypto & Web3 Integration",
   "AI-Powered UX",
 ];
@@ -27,7 +27,7 @@ export default function MarqueeTape() {
       <div
         onMouseEnter={pause}
         onMouseLeave={play}
-        className="relative bg-yellow-400 text-black font-extrabold text-3xl md:text-5xl tracking-tight rotate-[-3deg] py-4 md:py-6"
+        className="relative bg-[#101828] text-white font-extrabold text-3xl md:text-5xl tracking-tight  py-4 md:py-6"
       >
         <Swiper
           modules={[Autoplay, FreeMode]}
