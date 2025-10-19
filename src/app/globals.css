@@ -27,6 +27,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Outline number like the reference */
+.text-outline {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.09); /* soft outline */
+  color: transparent; /* no fill */
+}
+
+/* custom css code */
+/* Gradient token you asked for */
+:root {
+  --cryp-gradient: linear-gradient(
+    to right,
+    #5c63fa,
+    #a868fa,
+    #3dabf4,
+    #5c63fa
+  );
+}
+
+/* Optional: burger overlay tint */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+.bm-menu {
+  background: #0b0b0c !important;
+  padding: 1rem 1rem 0;
+}
+.bm-item-list a {
+  color: #fff;
+}
 
 /* gradient button */
 

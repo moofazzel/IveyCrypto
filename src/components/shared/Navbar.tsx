@@ -1,8 +1,9 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Menu as MenuIcon, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { slide as BurgerMenu } from "react-burger-menu";
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
@@ -12,8 +13,8 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -31,7 +32,10 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-xl bg-cryp-gradient" />
+          <div
+            className="h-9 w-9 rounded-xl"
+            style={{ background: "var(--cryp-gradient)" }}
+          />
           <span className="text-xl font-semibold tracking-tight text-white">
             Cryp
           </span>
@@ -51,64 +55,87 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right side CTAs */}
+        {/* Right side CTA — Gradient ring by default, fill on hover */}
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:+19179003111"
-            className="flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/90 hover:text-white"
+            className="group relative inline-flex items-center rounded-full p-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            style={{ background: "var(--cryp-gradient)" }}
           >
-            <Phone size={16} />
-            917 900 3111
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all
+                         bg-black group-hover:bg-[length:100%_100%] group-hover:text-white"
+              style={{
+                background: "linear-gradient(#0b0b0c,#0b0b0c)", // inner dark by default
+              }}
+            >
+              <Phone size={18} />
+              <span className="tracking-wide">917 900 3111</span>
+            </span>
+
+            {/* On hover, flood fill with same gradient */}
+            <style jsx>{`
+              .group:hover span {
+                background: var(--cryp-gradient) !important;
+              }
+            `}</style>
           </a>
-          <Link href="#consult" className="btn-gradient text-sm">
-            Book a Free Consultation
-          </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle (burger-menu handles the UI) */}
         <button
           aria-label="Toggle Menu"
-          onClick={() => setOpen((s) => !s)}
+          onClick={() => setOpen(true)}
           className="rounded-lg p-2 text-white lg:hidden"
         >
-          {open ? <X /> : <Menu />}
+          <MenuIcon />
         </button>
       </nav>
 
-      {/* Mobile drawer */}
-      <div
-        className={`lg:hidden ${
-          open ? "max-h-96" : "max-h-0"
-        } overflow-hidden border-t border-white/10 transition-[max-height] duration-300`}
+      {/* Mobile menu with react-burger-menu */}
+      <BurgerMenu
+        right
+        isOpen={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+        customBurgerIcon={false}
+        customCrossIcon={<X color="#fff" />}
+        width={"85%"}
       >
-        <div className="mx-auto max-w-7xl px-4 py-4 md:px-6">
-          <ul className="grid gap-3">
-            {NAV_LINKS.map((l) => (
-              <li key={l.href}>
-                <Link
-                  onClick={() => setOpen(false)}
-                  href={l.href}
-                  className="block rounded-lg px-3 py-2 text-base font-medium text-white/90 hover:bg-white/5"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 flex gap-3">
-            <a
-              href="tel:+19179003111"
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-white/90"
+        <div className="flex flex-col gap-2">
+          {NAV_LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3 py-3 text-base font-medium text-white/90 hover:bg-white/5"
             >
-              <Phone size={16} />
-              917 900 3111
-            </a>
-            <Link href="#consult" className="btn-gradient flex-1">
-              Free Consult
+              {l.label}
             </Link>
-          </div>
+          ))}
+
+          {/* Mobile CTA — same gradient ring & hover fill */}
+          <a
+            href="tel:+19179003111"
+            className="group mt-3 inline-flex items-center justify-center rounded-full p-[2px]"
+            style={{ background: "var(--cryp-gradient)" }}
+          >
+            <span
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all"
+              style={{ background: "linear-gradient(#0b0b0c,#0b0b0c)" }}
+            >
+              <Phone size={18} />
+              917 900 3111
+            </span>
+            <style jsx>{`
+              .group:hover span {
+                background: var(--cryp-gradient) !important;
+                color: #fff;
+              }
+            `}</style>
+          </a>
         </div>
-      </div>
+      </BurgerMenu>
     </header>
   );
 }
