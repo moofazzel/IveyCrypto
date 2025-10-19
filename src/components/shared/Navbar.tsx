@@ -1,20 +1,20 @@
 "use client";
 
-import { Menu as MenuIcon, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { slide as BurgerMenu } from "react-burger-menu";
 
 const NAV_LINKS = [
+  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#portfolio", label: "Portfolio" },
+
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -23,19 +23,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // lock body scroll when drawer open
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", open);
+  }, [open]);
+
   return (
     <header
       className={`${
-        scrolled ? "fixed bg-black/70 backdrop-blur-md shadow-lg" : "absolute"
-      } left-0 top-0 z-50 w-full transition-all`}
+        scrolled
+          ? "fixed bg-black/70 backdrop-blur-md shadow-lg pt-0"
+          : "absolute"
+      } left-0 top-0 z-50 w-full transition-all pt-[25px]`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div
-            className="h-9 w-9 rounded-xl"
-            style={{ background: "var(--cryp-gradient)" }}
-          />
+          <div className="h-9 w-9 rounded-xl bg-[linear-gradient(to_right,#5c63fa,#a868fa,#3dabf4,#5c63fa)]" />
           <span className="text-xl font-semibold tracking-tight text-white">
             Cryp
           </span>
@@ -47,7 +51,7 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-sm font-medium text-white/80 hover:text-white"
+                className="text-[18px] font-medium text-white/80 hover:text-white"
               >
                 {l.label}
               </Link>
@@ -55,87 +59,103 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right side CTA — Gradient ring by default, fill on hover */}
+        {/* Right CTAs (desktop) — gradient ring default, gradient fill on hover */}
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:+19179003111"
             className="group relative inline-flex items-center rounded-full p-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-            style={{ background: "var(--cryp-gradient)" }}
+            style={{
+              background:
+                "linear-gradient(to right,#5c63fa,#a868fa,#3dabf4,#5c63fa)",
+            }}
           >
-            <span
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all
-                         bg-black group-hover:bg-[length:100%_100%] group-hover:text-white"
-              style={{
-                background: "linear-gradient(#0b0b0c,#0b0b0c)", // inner dark by default
-              }}
-            >
+            <span className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all bg-black">
               <Phone size={18} />
               <span className="tracking-wide">917 900 3111</span>
             </span>
-
-            {/* On hover, flood fill with same gradient */}
             <style jsx>{`
               .group:hover span {
-                background: var(--cryp-gradient) !important;
-              }
-            `}</style>
-          </a>
-        </div>
-
-        {/* Mobile toggle (burger-menu handles the UI) */}
-        <button
-          aria-label="Toggle Menu"
-          onClick={() => setOpen(true)}
-          className="rounded-lg p-2 text-white lg:hidden"
-        >
-          <MenuIcon />
-        </button>
-      </nav>
-
-      {/* Mobile menu with react-burger-menu */}
-      <BurgerMenu
-        right
-        isOpen={open}
-        onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}
-        customBurgerIcon={false}
-        customCrossIcon={<X color="#fff" />}
-        width={"85%"}
-      >
-        <div className="flex flex-col gap-2">
-          {NAV_LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-3 text-base font-medium text-white/90 hover:bg-white/5"
-            >
-              {l.label}
-            </Link>
-          ))}
-
-          {/* Mobile CTA — same gradient ring & hover fill */}
-          <a
-            href="tel:+19179003111"
-            className="group mt-3 inline-flex items-center justify-center rounded-full p-[2px]"
-            style={{ background: "var(--cryp-gradient)" }}
-          >
-            <span
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all"
-              style={{ background: "linear-gradient(#0b0b0c,#0b0b0c)" }}
-            >
-              <Phone size={18} />
-              917 900 3111
-            </span>
-            <style jsx>{`
-              .group:hover span {
-                background: var(--cryp-gradient) !important;
+                background: linear-gradient(
+                  to right,
+                  #5c63fa,
+                  #a868fa,
+                  #3dabf4,
+                  #5c63fa
+                ) !important;
                 color: #fff;
               }
             `}</style>
           </a>
         </div>
-      </BurgerMenu>
+
+        {/* Mobile toggle */}
+        <button
+          aria-label="Open menu"
+          onClick={() => setOpen(true)}
+          className="rounded-lg p-2 text-white lg:hidden"
+        >
+          <Menu />
+        </button>
+      </nav>
+
+      {/* Backdrop */}
+      <div
+        aria-hidden={!open}
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ease-out lg:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      {/* Right slide drawer */}
+      <aside
+        role="dialog"
+        aria-modal="true"
+        className={`fixed right-0 top-0 z-[70] h-full w-[85%] max-w-sm bg-[#d9bb79] text-black shadow-xl
+        transition-transform duration-300 ease-out will-change-transform lg:hidden ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-6 py-5">
+          <h3 className="text-lg font-semibold">Menu</h3>
+          <button
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="grid h-10 w-10 place-items-center rounded-sm border border-black/30"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <nav className="px-6">
+          <ul className="space-y-6">
+            {NAV_LINKS.map((l, i) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`block text-[17px] leading-none ${
+                    i === 0 ? "text-[#3B82F6] font-medium" : "text-black"
+                  } hover:underline underline-offset-4`}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* BOOK NOW */}
+          <div className="pt-8">
+            <Link
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center rounded-sm bg-black px-6 py-4 text-sm font-semibold text-white"
+            >
+              BOOK NOW <span className="ml-2">→</span>
+            </Link>
+          </div>
+        </nav>
+      </aside>
     </header>
   );
 }
