@@ -40,7 +40,7 @@ export default function FAQSection({
   imageSrc?: string;
   imageAlt?: string;
 }) {
-  const [open, setOpen] = React.useState<number>(1); // Default open = second item
+  const [open, setOpen] = React.useState<number>(0); // Default open = first item
 
   return (
     <section
