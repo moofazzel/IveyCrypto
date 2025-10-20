@@ -1,8 +1,8 @@
-// app/components/ContactSection.tsx
 "use client";
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
 type FormState = {
   name: string;
@@ -13,7 +13,43 @@ type FormState = {
   goals: string;
 };
 
+type ToastProps = {
+  message: string;
+  position?: "right" | "center";
+};
+
 type Errors = Partial<Record<keyof FormState, string>>;
+
+/* ---------- Toast (portal) ---------- */
+function Toast({ message, position = "right" }: ToastProps) {
+  if (!message) return null;
+  const pos = position === "center" ? "left-1/2 -translate-x-1/2" : "right-5";
+
+  return createPortal(
+    <div
+      className={`fixed top-5 ${pos} z-[1000] rounded-xl bg-green-500 px-4 py-3 text-sm text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] ring-1 ring-white/10`}
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex items-center gap-2">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          className="opacity-90"
+          aria-hidden
+        >
+          <path
+            fill="currentColor"
+            d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2m-1 14l-4-4l1.414-1.414L11 12.172l5.586-5.586L18 8l-7 8z"
+          />
+        </svg>
+        <span>{message}</span>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 export default function ContactSection() {
   const [values, setValues] = useState<FormState>({
@@ -27,7 +63,6 @@ export default function ContactSection() {
   const [errors, setErrors] = useState<Errors>({});
   const [toast, setToast] = useState<string | null>(null);
 
-  // simple validators (no libraries)
   const validators = useMemo(
     () => ({
       name: (v: string) =>
@@ -37,11 +72,7 @@ export default function ContactSection() {
           ? ""
           : "Enter a valid email address",
       phone: (v: string) =>
-        v.trim().length === 0
-          ? "Phone is required"
-          : /^[0-9+()\-\s]{6,}$/.test(v)
-          ? ""
-          : "Enter a valid phone number",
+        /^\d{6,}$/.test(v) ? "" : "Enter numbers only (min 6 digits)",
       interest: (v: string) =>
         v.trim().length < 2 ? "Tell us what you are interested in" : "",
       portfolioSize: (v: string) =>
@@ -52,7 +83,7 @@ export default function ContactSection() {
     []
   );
 
-  const validateAll = (): boolean => {
+  const validateAll = () => {
     const e: Errors = {};
     (Object.keys(values) as (keyof FormState)[]).forEach((k) => {
       const msg = validators[k](values[k] || "");
@@ -63,19 +94,18 @@ export default function ContactSection() {
   };
 
   const handleChange =
-    (field: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setValues((s) => ({ ...s, [field]: e.target.value }));
-      // live-clear error on change
+    (field: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      let val = e.target.value;
+      if (field === "phone") val = val.replace(/\D/g, ""); // digits only
+      setValues((s) => ({ ...s, [field]: val }));
       if (errors[field]) setErrors((er) => ({ ...er, [field]: "" }));
     };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // no reload
+    e.preventDefault();
     if (!validateAll()) return;
 
-    // simulate success (keep user in the same section)
-    setToast("Thanks! We’ll contact you shortly.");
+    setToast("Succeed. For a quick response DM us on Telegram");
     setValues({
       name: "",
       email: "",
@@ -86,7 +116,6 @@ export default function ContactSection() {
     });
   };
 
-  // auto-dismiss toast
   useEffect(() => {
     if (!toast) return;
     const t = setTimeout(() => setToast(null), 3000);
@@ -95,7 +124,11 @@ export default function ContactSection() {
 
   return (
     <section className="relative isolate overflow-hidden py-24">
-      {/* Decorative side images (match OG positioning) */}
+      {/* ✅ Success Toast */}
+      <Toast message={toast ?? ""} position="right" />
+      {/* To center it instead: <Toast message={toast ?? ''} position="center" /> */}
+
+      {/* Side images */}
       <Image
         src="/images/backgrounds/left.avif"
         alt=""
@@ -115,15 +148,7 @@ export default function ContactSection() {
         priority
       />
 
-      {/* Toast (top-right) */}
-      {toast && (
-        <div className="fixed right-5 top-5 z-[60] rounded-xl bg-[#111315] px-4 py-3 text-sm text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset]">
-          {toast}
-        </div>
-      )}
-
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        {/* Card */}
         <div className="mx-auto rounded-[28px] border border-white/8 bg-[#121314]/95 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] sm:p-10">
           <h2 className="mb-8 text-center text-3xl font-bold tracking-tight text-white sm:text-5xl">
             Book Free Consultation
@@ -134,7 +159,6 @@ export default function ContactSection() {
             noValidate
             className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2"
           >
-            {/* Name */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 Name
@@ -151,7 +175,6 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* Email */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 Email
@@ -168,16 +191,30 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* Phone */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 Phone
               </label>
               <input
-                type="tel"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 placeholder="Enter your phone"
                 value={values.phone}
                 onChange={handleChange("phone")}
+                onKeyDown={(e) => {
+                  const ok = [
+                    "Backspace",
+                    "Delete",
+                    "ArrowLeft",
+                    "ArrowRight",
+                    "Tab",
+                    "Home",
+                    "End",
+                  ];
+                  if (ok.includes(e.key)) return;
+                  if (!/^\d$/.test(e.key)) e.preventDefault();
+                }}
                 className="w-full rounded-full border border-white/10 bg-[#16181B] px-5 py-4 text-white placeholder:text-white/40 outline-none shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] focus:border-white/20"
               />
               {errors.phone && (
@@ -185,7 +222,6 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* What Are You Interested In? (text, no dropdown) */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 What Are You Interested In?
@@ -202,7 +238,6 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* Crypto Portfolio Size (text, no dropdown) */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 Crypto Portfolio Size
@@ -221,7 +256,6 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* Investment Goals (text, no dropdown) */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
                 Investment Goals
@@ -238,18 +272,15 @@ export default function ContactSection() {
               )}
             </div>
 
-            {/* Submit (full-width on its own row) */}
             <div className="col-span-1 md:col-span-2">
               <button
                 type="submit"
-                className="
-                  mx-auto block rounded-full px-10 py-4 text-base font-semibold text-white
-                  [background:linear-gradient(270deg,rgb(6,103,237)_0%,rgb(1,224,34)_100%)]
-                  shadow-[0_0_0_1px_rgba(255,255,255,0.10)_inset]
-                  transition-all duration-500 ease-in-out
-                  hover:[background:linear-gradient(270deg,rgb(1,224,34)_0%,rgb(6,103,237)_100%)]
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40
-                "
+                className="mx-auto block rounded-full px-10 py-4 text-base font-semibold text-white
+                           [background:linear-gradient(270deg,rgb(6,103,237)_0%,rgb(1,224,34)_100%)]
+                           shadow-[0_0_0_1px_rgba(255,255,255,0.10)_inset]
+                           transition-all duration-500 ease-in-out
+                           hover:[background:linear-gradient(270deg,rgb(1,224,34)_0%,rgb(6,103,237)_100%)]
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 Submit
               </button>
@@ -257,6 +288,9 @@ export default function ContactSection() {
           </form>
         </div>
       </div>
+
+      {/* Next/Image remotePatterns note:
+         Make sure next.config.js allows framerusercontent.com images */}
     </section>
   );
 }
