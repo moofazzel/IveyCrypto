@@ -3,10 +3,11 @@
 import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import GradientButton from "./GradientButton";
 
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
+
   { href: "#portfolio", label: "Portfolio" },
 
   { href: "#contact", label: "Contact" },
@@ -34,14 +35,14 @@ export default function Navbar() {
         scrolled
           ? "fixed bg-black/70 backdrop-blur-md shadow-lg pt-0"
           : "absolute"
-      } left-0 top-0 z-50 w-full transition-all pt-[25px]`}
+      } left-0 top-0 z-50 w-full transition-all `}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="h-9 w-9 rounded-xl bg-[linear-gradient(to_right,#5c63fa,#a868fa,#3dabf4,#5c63fa)]" />
           <span className="text-xl font-semibold tracking-tight text-white">
-            Cryp
+            Ivey Solutions
           </span>
         </Link>
 
@@ -61,31 +62,14 @@ export default function Navbar() {
 
         {/* Right CTAs (desktop) — gradient ring default, gradient fill on hover */}
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="tel:+19179003111"
-            className="group relative inline-flex items-center rounded-full p-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-            style={{
-              background:
-                "linear-gradient(to right,#5c63fa,#a868fa,#3dabf4,#5c63fa)",
-            }}
-          >
-            <span className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white/90 transition-all bg-black">
-              <Phone size={18} />
-              <span className="tracking-wide">917 900 3111</span>
-            </span>
-            <style jsx>{`
-              .group:hover span {
-                background: linear-gradient(
-                  to right,
-                  #5c63fa,
-                  #a868fa,
-                  #3dabf4,
-                  #5c63fa
-                ) !important;
-                color: #fff;
-              }
-            `}</style>
-          </a>
+          <Link href="tel:9179003111">
+            <GradientButton className="w-[210px]">
+              <div className="flex items-center justify-center gap-3">
+                <Phone size={18} />
+                <span className="tracking-wide">917 900 3111</span>
+              </div>
+            </GradientButton>
+          </Link>
         </div>
 
         {/* Mobile toggle */}

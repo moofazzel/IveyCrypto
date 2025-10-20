@@ -60,7 +60,6 @@ body {
 /* gradient button */
 
 .btn-hover {
-  width: 200px;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -100,7 +99,14 @@ body {
   );
 
   /* padding: 10px 40px; */
-  width: 333px;
+
   font-size: 20px;
-  height: 62px;
+  height: 63=2px;
+}
+.btn_hover2:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }

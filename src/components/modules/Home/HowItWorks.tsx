@@ -63,9 +63,9 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative bg-[#0A0A0D] text-white py-20 md:py-24">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl md:text-4xl font-extrabold mb-3">
+    <section className="relative bg-[#0C0912] text-white pb-20 pt-10 ">
+      <div className="container mx-auto max-w-7xl px-4">
+        <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3">
           How It Works
         </h2>
         <p className="text-center text-white/70 mb-14">
@@ -76,8 +76,8 @@ export default function HowItWorks() {
           {steps.map(({ id, title, desc, Icon }) => (
             <div
               key={id}
-              className="relative w-[31%] min-w-[300px] bg-[#121215] border border-white/10 rounded-2xl
-                         px-8 py-12 overflow-visible hover:bg-[#16161a] transition-colors min-h-[220px]"
+              className="relative md:w-[31%] md:min-w-[300px] sm:w-[48%] w-full bg-[#121215] border border-white/10 rounded-2xl
+                         px-8 py-12 overflow-visible hover:bg-[#16161a] transition-colors min-h-[220px] mb-[37px] md:mb-0"
             >
               {/* Icon bubble (no clipping now) */}
               <div
