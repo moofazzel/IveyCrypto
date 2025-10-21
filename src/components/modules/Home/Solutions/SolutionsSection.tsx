@@ -13,22 +13,22 @@ type Card = {
 
 const CARDS: Card[] = [
   {
-    title: "Individuals",
-    body: "New to cryptocurrency? We’ll guide you every step of the way.",
-    icon: "/images/solutions/solution.webp", // replace with your saved asset if needed
-    alt: "Individuals icon",
+    title: "Build Websites",
+    body: "Clean, fast, and on-brand sites — from memes to full-utility platforms.",
+    icon: "/images/solutions/code.png", // replace with your saved asset if needed
+    alt: "website",
   },
   {
-    title: "Businesses",
-    body: "Securely store, analyze, and optimize your crypto operations.",
-    icon: "/images/solutions/solution.webp",
-    alt: "Businesses icon",
+    title: "Community Growth",
+    body: "Boost engagement with expert moderation, raiding, and campaign management.",
+    icon: "/images/solutions/social.png",
+    alt: "Community Growth icon",
   },
   {
-    title: "Institutions",
-    body: "Custom strategies for portfolio control and risk analysis.",
-    icon: "/images/solutions/solution.webp",
-    alt: "Institutions icon",
+    title: "Creative Studio",
+    body: "Eye-catching memes, visuals, and brand assets made to go viral.",
+    icon: "/images/solutions/meme.png",
+    alt: "Creative Studio icon",
   },
 ];
 
@@ -90,10 +90,11 @@ export default function SolutionsSection({
       {/* Content */}
       <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-          Crypto Solutions for Everyone
+          We Build. We Hype. We Grow.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#C5C6CA] sm:text-lg">
-          Custom services to securely manage and grow your assets.
+          From arts, websites to community hype — everything your crypto brand
+          needs.
         </p>
 
         {/* Cards */}
