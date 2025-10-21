@@ -16,26 +16,26 @@ type Testimonial = {
 const DATA: Testimonial[] = [
   {
     quote:
-      "“The portfolio tracking and tax reporting features are very useful. I now feel confident managing my assets and making informed decisions.”",
-    name: "Cody Fisher",
-    role: "Video Producer",
-    avatar: "/images/testimonials/person.avif", // or a remote URL
+      "“Ivey team gets it. Fast, clean, and always ahead of the curve. Every site we’ve launched with them has felt like a statement. They're our go-to for anything web.”",
+    name: "Ser Blue",
+    role: "Andy Project Owner",
+    avatar: "/images/testimonials/ser-blue.jpg", // or a remote URL
     stars: 5,
   },
   {
     quote:
-      "“The advanced analytics and real-time updates have changed how we manage our assets. The team is always providing valuable insights.”",
-    name: "Marvin McKinney",
-    role: "Business Owner",
-    avatar: "/images/testimonials/person.avif",
+      "“I’ve worked with a lot of devs, but Ivey's precision and vibe are unmatched. They builds with clarity and delivers with heart. Highly recommend.”",
+    name: "Jordi",
+    role: "Crypto Chad",
+    avatar: "/images/testimonials/jordi.jpg",
     stars: 5,
   },
   {
     quote:
-      "“Slick UI and timely alerts. It helped me rebalance at the right time without stress.”",
-    name: "Jenny Wilson",
-    role: "Product Manager",
-    avatar: "/images/testimonials/person.avif",
+      "“Crypto moves fast, and Ivey moves faster. From concept to launch, they’re been solid. Reliable, sharp, and always on point.”",
+    name: "Chadski23",
+    role: "X KOL",
+    avatar: "/images/testimonials/chadski.jpg",
     stars: 5,
   },
 ];
