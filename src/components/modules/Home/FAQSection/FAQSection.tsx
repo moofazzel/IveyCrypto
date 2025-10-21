@@ -12,29 +12,33 @@ type FaqItem = {
 
 const ITEMS: FaqItem[] = [
   {
-    q: "How do you secure my crypto assets?",
-    a: "We follow industry best practices including multisig wallets, hardware key management, and continuous monitoring. Funds are segregated and access is role-based with audit trails.",
+    q: "What kind of crypto websites do you build?",
+    a: "We create everything from meme coin sites to full utility platforms — landing pages, dashboards, mint sites, and more. Each site is built to match your project’s branding and goals.",
   },
   {
-    q: "What fees do you charge?",
-    a: "We offer flexible pricing plans with transparent fees, no hidden charges.",
+    q: "How long does it take to build a website?",
+    a: "Meme or promo sites are usually done fast, (Possible to deliver within 1 hour). While larger utility projects may take a bit longer for testing and integrations. Most sites are ready within 24-48 hours depending on complexity. ",
   },
   {
-    q: "Can I customize my investment strategy?",
-    a: "Yes. We tailor strategies to your risk profile, time horizon, and goals. You can choose passive, active, or hybrid allocations.",
+    q: "Do you also handle community growth?",
+    a: "Yes! We manage community growth across Telegram, Discord, and Twitter/X. Our raid team boosts engagement, and we also handle moderation, activity management, and general engagement to keep your communities active and growing — all with real activity, never spam.",
   },
   {
-    q: "What types of cryptocurrencies do you manage?",
-    a: "We cover major L1s/L2s and selective DeFi assets, with a research filter for liquidity, security, and long-term fundamentals.",
+    q: "Can you help with memes and graphics too?",
+    a: "Absolutely. We have an in-house creative team that designs viral memes, banners, and promo visuals tailored for your project’s tone and audience.",
   },
+  // {
+  //   q: "What makes your services different?",
+  //   a: "We’re not just developers — we’re a full crypto growth crew. From website design to hype building and community management, we cover everything a project needs to launch strong and grow fast.",
+  // },
   {
-    q: "How can I track the performance of my portfolio?",
-    a: "Your dashboard shows real-time balances, PnL, risk metrics, and downloadable statements. Alerts keep you informed on key movements.",
+    q: "How do I get started?",
+    a: "Just contact us with your project idea or website plan. We’ll discuss goals, style, and timeline — then our team handles the rest from design to live deployment.",
   },
 ];
 
 export default function FAQSection({
-  imageSrc = "/images/faq/faq.avif",
+  imageSrc = "/images/faq/faq.jpg",
   imageAlt = "3D Spiral Visual",
 }: {
   imageSrc?: string;
