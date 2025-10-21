@@ -6,6 +6,7 @@ import Hero from "@/components/modules/Home/Hero";
 import MarqueeTape from "@/components/modules/Home/MarqueeTape";
 import ServicesSection from "@/components/modules/Home/ServicesSection";
 import SolutionsSection from "@/components/modules/Home/Solutions/SolutionsSection";
+import TestimonialSection from "@/components/modules/Home/Testimonials/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesSection />
       <SolutionsSection />
       <CTASection />
+      <TestimonialSection />
       <FAQSection />
       <ContactSection />
     </>
