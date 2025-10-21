@@ -15,6 +15,7 @@ export default function Home() {
       <MovingText />
       <About />
       <ServicesSection />
+
       <MasonryGallery />
       <HowItWorks />
       <CTASection />

@@ -25,7 +25,7 @@ const DEFAULT_ITEMS = [
 
 export default function MovingText({
   items = DEFAULT_ITEMS,
-  speed = 25,
+  speed = 40,
   direction = "left",
   strokeColor = "#a868fa",
   fontSize = "clamp(40px, 8vw, 150px)",
@@ -77,6 +77,7 @@ export default function MovingText({
     <div
       ref={containerRef}
       className={`overflow-hidden bg-transparent w-full cursor-pointer ${className}`}
+      style={{ background: "#0B0710" }}
     >
       <ul
         ref={ulRef}

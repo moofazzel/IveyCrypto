@@ -1,5 +1,3 @@
-"use client";
-
 import GradientButton from "@/components/shared/GradientButton";
 import Link from "next/link";
 

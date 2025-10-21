@@ -1,5 +1,3 @@
-"use client";
-
 import { Boxes, PhoneCall, Shield } from "lucide-react";
 
 function CurvedArrow({ className = "" }: { className?: string }) {

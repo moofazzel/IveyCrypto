@@ -1,6 +1,3 @@
-// components/ServicesSection.tsx
-"use client";
-
 import {
   BarChart,
   Box,

@@ -56,7 +56,7 @@ type MasonryInstance = {
   destroy: () => void;
 } & Masonry;
 
-export default function MasonryGallery() {
+export default function AllPortfolio() {
   const [active, setActive] = useState<Category>("all");
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -124,6 +124,30 @@ export default function MasonryGallery() {
   return (
     <div className="w-full bg-[#0B0710]">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
+        <div className="w-full px-4 pt-6 pb-4 text-center">
+          <ul className="inline-flex w-auto gap-2 rounded-lg bg-neutral-800 p-1">
+            {TABS.map((t) => (
+              <li key={t.id}>
+                <button
+                  onClick={() => {
+                    setExpandedId(null);
+                    setActive(t.id);
+                    setTimeout(() => safeLayout(), 0);
+                  }}
+                  className={[
+                    "whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium",
+                    active === t.id
+                      ? "bg-white text-neutral-900"
+                      : "text-neutral-200 hover:bg-neutral-700/80",
+                  ].join(" ")}
+                >
+                  {t.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Masonry Grid (full width) */}
         <div ref={gridRef} id="container" className="w-full px-2 sm:px-3 pb-10">
           {/* Base column size: 1col (mobile) → 2col (sm) → 3col (lg) */}
