@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import GradientButton from "./GradientButton";
 
 const NAV_LINKS = [
-  { href: "#home", label: "Home" },
+  { href: "/", label: "Home" },
 
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
 
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

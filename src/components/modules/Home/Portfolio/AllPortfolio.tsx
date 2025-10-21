@@ -124,6 +124,13 @@ export default function AllPortfolio() {
   return (
     <div className="w-full bg-[#0B0710]">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
+        <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3 text-white">
+          Our Works
+        </h2>
+        <p className="text-center text-white/70 mb-14">
+          A handpicked selection of recent projects—clean builds, fast
+          performance, and designs that convert.{" "}
+        </p>
         <div className="w-full px-4 pt-6 pb-4 text-center">
           <ul className="inline-flex w-auto gap-2 rounded-lg bg-neutral-800 p-1">
             {TABS.map((t) => (
@@ -135,7 +142,7 @@ export default function AllPortfolio() {
                     setTimeout(() => safeLayout(), 0);
                   }}
                   className={[
-                    "whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium",
+                    "whitespace-nowrap rounded-[30px] px-[35px] py-2 text-[16px] font-medium",
                     active === t.id
                       ? "bg-white text-neutral-900"
                       : "text-neutral-200 hover:bg-neutral-700/80",

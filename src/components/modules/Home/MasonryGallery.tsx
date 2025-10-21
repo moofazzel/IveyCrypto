@@ -114,6 +114,13 @@ export default function MasonryGallery() {
     <div className="w-full bg-[#0B0710]">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
         {/* Tabs (optional UI) */}
+        <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3 text-white">
+          Our Works
+        </h2>
+        <p className="text-center text-white/70 mb-14">
+          A handpicked selection of recent projects—clean builds, fast
+          performance, and designs that convert.{" "}
+        </p>
 
         {/* Masonry Grid */}
         <div ref={gridRef} id="container" className="w-full px-2 sm:px-3 pb-10">
