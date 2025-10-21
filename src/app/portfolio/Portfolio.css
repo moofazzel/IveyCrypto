@@ -1,0 +1,61 @@
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-wrapper > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-gap: 17px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  padding-top: 50px;
+}
+.grid-wrapper .wide {
+  grid-column: span 2;
+}
+.grid-wrapper .tall {
+  grid-row: span 2;
+}
+.grid-wrapper .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* all portfolio section */
+/* Overlay effect */
+.portfolio-card .portfolio-overlay {
+  opacity: 0;
+  -webkit-backdrop-filter: saturate(110%) blur(2px);
+  backdrop-filter: saturate(110%) blur(2px);
+  background: rgba(63, 58, 221, 0.89);
+  transition: opacity 0.25s, transform 0.25s;
+  transform: translateY(6px);
+}
+
+/* Show overlay on hover */
+.portfolio-card:hover .portfolio-overlay,
+.portfolio-card:focus-within .portfolio-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button click feedback */
+.portfolio-card .portfolio-overlay a:active {
+  transform: translateY(1px);
+}

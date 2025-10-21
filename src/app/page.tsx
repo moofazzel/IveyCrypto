@@ -7,17 +7,25 @@ import MarqueeTape from "@/components/modules/Home/MarqueeTape";
 import ServicesSection from "@/components/modules/Home/ServicesSection";
 import SolutionsSection from "@/components/modules/Home/Solutions/SolutionsSection";
 import TestimonialSection from "@/components/modules/Home/Testimonials/TestimonialsSection";
+import HowItWorks from "@/components/modules/Home/HowItWorks";
+import MasonryGallery from "@/components/modules/Home/MasonryGallery";
+import MovingText from "@/components/modules/Home/MovingText";
+import ServicesSection from "@/components/modules/Home/ServicesSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <MarqueeTape />
+      <MovingText />
       <About />
       <ServicesSection />
       <SolutionsSection />
       <CTASection />
       <TestimonialSection />
+
+      <MasonryGallery />
+      <HowItWorks />
+      <CTASection />
       <FAQSection />
       <ContactSection />
     </>
