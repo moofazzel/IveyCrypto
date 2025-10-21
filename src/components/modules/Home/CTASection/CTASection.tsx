@@ -1,6 +1,5 @@
 // app/components/CTASection.tsx
 
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,16 +36,16 @@ export default function CTASection() {
           id="cta-heading"
           className="text-balance text-3xl md:text-6xl font-extrabold tracking-tighter text-white"
         >
-          Need Help? We&apos;re Here for You!
+          Your Launch. Our Expertise.
         </h2>
 
         <p className="mt-4 text-balance text-base leading-relaxed text-gray-300 sm:text-lg">
-          We&apos;re here to help! Contact our support team for assistance.
+          We design, develop, and drive your crypto project forward.
         </p>
 
         <div className="mt-8">
           <Link
-            href="/#contact"
+            href="/https://t.me/mahmud_3322"
             className="
             relative inline-flex items-center justify-center overflow-hidden
             rounded-[58px] px-7 py-4
@@ -62,7 +61,7 @@ export default function CTASection() {
             before:z-0 hover:before:opacity-100
           "
           >
-            <span className="relative z-10">Book a Free Consultation</span>
+            <span className="relative z-10">Send a Message</span>
           </Link>
         </div>
       </div>
