@@ -12,7 +12,7 @@ type Item = {
   cat: Exclude<Category, "all">;
 };
 
-// Local images (mapped by your naming guide: tl* → memes, wd*/bg*/screencap → utility)
+// ✅ Keep only 7 items
 const ITEMS: Item[] = [
   { id: "tl1", src: "/images/portfolio/tl1.jpg", alt: "tall 1", cat: "memes" },
   { id: "tl2", src: "/images/portfolio/tl2.jpg", alt: "tall 2", cat: "memes" },
@@ -23,25 +23,15 @@ const ITEMS: Item[] = [
     cat: "utility",
   },
   { id: "bg1", src: "/images/portfolio/bg1.jpg", alt: "big 1", cat: "utility" },
-  { id: "tl5", src: "/images/portfolio/tl5.jpg", alt: "tall 5", cat: "memes" },
+  { id: "tl3", src: "/images/portfolio/tl3.jpg", alt: "tall 3", cat: "memes" },
   {
     id: "wd2",
     src: "/images/portfolio/wd2.jpg",
     alt: "wide 2",
     cat: "utility",
   },
-  { id: "bg3", src: "/images/portfolio/bg3.jpg", alt: "big 3", cat: "utility" },
   { id: "bg2", src: "/images/portfolio/bg2.jpg", alt: "big 2", cat: "utility" },
-  { id: "tl3", src: "/images/portfolio/tl3.jpg", alt: "tall 3", cat: "memes" },
-
-  { id: "tl4", src: "/images/portfolio/tl4.jpg", alt: "tall 4", cat: "memes" },
-  { id: "tl6", src: "/images/portfolio/tl6.jpg", alt: "tall 6", cat: "memes" },
-  {
-    id: "wd3",
-    src: "/images/portfolio/wd3.jpg",
-    alt: "wide 3",
-    cat: "utility",
-  },
+  { id: "bg3", src: "/images/portfolio/bg3.jpg", alt: "big 3", cat: "memes" },
 ];
 
 const TABS: { id: Category; label: string }[] = [
@@ -50,7 +40,6 @@ const TABS: { id: Category; label: string }[] = [
   { id: "utility", label: "Utility" },
 ];
 
-// Instance type to satisfy TS when calling layout()/destroy()
 type MasonryInstance = {
   layout: () => void;
   destroy: () => void;
@@ -63,7 +52,6 @@ export default function MasonryGallery() {
   const gridRef = useRef<HTMLDivElement | null>(null);
   const msnryRef = useRef<Masonry | null>(null);
 
-  // Safe helpers
   const safeLayout = () => {
     const inst = msnryRef.current as MasonryInstance | null;
     if (inst && typeof inst.layout === "function") inst.layout();
@@ -82,9 +70,9 @@ export default function MasonryGallery() {
     const grid = gridRef.current;
     if (!grid) return;
 
-    const isMobile = window.innerWidth < 768; // Tailwind 'md' breakpoint
+    // Disable Masonry below md for a simple stacked flow
+    const isMobile = window.innerWidth < 768;
     if (isMobile) {
-      // Disable Masonry on phones for simpler flow
       safeDestroy();
       msnryRef.current = null;
       return;
@@ -118,15 +106,21 @@ export default function MasonryGallery() {
 
   const onItemClick = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
+    // Reflow after any class change
     setTimeout(() => safeLayout(), 0);
   };
 
   return (
     <div className="w-full bg-[#0B0710]">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
-        {/* Masonry Grid (full width) */}
+        {/* Tabs (optional UI) */}
+
+        {/* Masonry Grid */}
         <div ref={gridRef} id="container" className="w-full px-2 sm:px-3 pb-10">
-          {/* Base column size: 1col (mobile) → 2col (sm) → 3col (lg) */}
+          {/* Sizer defines column width:
+              - mobile: full width
+              - sm: 2 columns
+              - lg: 3 columns */}
           <div className="grid-sizer w-full sm:w-1/2 lg:w-1/3" />
 
           {filtered.map((item) => {
@@ -136,10 +130,11 @@ export default function MasonryGallery() {
                 key={item.id}
                 className={[
                   "grid-item",
-                  isExpanded
-                    ? "w-full sm:w-full md:w-[32%]"
-                    : "w-full sm:w-full md:w-[32%]",
-                  "cursor-pointer overflow-hidden",
+                  // Match the sizer widths so Masonry packs perfectly
+                  "w-full sm:w-1/2 lg:w-[32%]",
+                  // Optional: let expanded add subtle emphasis without breaking width
+                  isExpanded ? "scale-[1.01]" : "scale-100",
+                  "cursor-pointer overflow-hidden transition-transform duration-200",
                 ].join(" ")}
                 onClick={() => onItemClick(item.id)}
               >
@@ -157,7 +152,6 @@ export default function MasonryGallery() {
           })}
         </div>
       </div>
-      {/* Tabs */}
     </div>
   );
 }

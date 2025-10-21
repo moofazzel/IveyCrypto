@@ -69,7 +69,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${poppins.variable} ${geistMono.variable} font-poppins antialiased`}
-        style={{ background: "#0B0710" }}
       >
         <Navbar />
         <main>{children}</main>
