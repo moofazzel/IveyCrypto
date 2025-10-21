@@ -2,6 +2,7 @@
 
 import imagesLoaded from "imagesloaded";
 import Masonry from "masonry-layout";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Category = "all" | "memes" | "utility";
@@ -12,7 +13,7 @@ type Item = {
   cat: Exclude<Category, "all">;
 };
 
-// ✅ Keep only 7 items
+// ✅ Keep only 7–8 items
 const ITEMS: Item[] = [
   { id: "tl1", src: "/images/portfolio/tl1.jpg", alt: "tall 1", cat: "memes" },
   { id: "tl2", src: "/images/portfolio/tl2.jpg", alt: "tall 2", cat: "memes" },
@@ -113,18 +114,36 @@ export default function MasonryGallery() {
   return (
     <div className="w-full bg-[#0B0710]">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
-        {/* Tabs (optional UI) */}
-        <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3 text-white">
-          Our Works
-        </h2>
-        <p className="text-center text-white/70 mb-14">
-          A handpicked selection of recent projects—clean builds, fast
-          performance, and designs that convert.{" "}
-        </p>
+        {/* Header + absolutely-positioned CTA */}
+        <div className="relative">
+          <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3 text-white">
+            Our Works
+          </h2>
+          <p className="text-center text-white/70 mb-14">
+            A handpicked selection of recent projects—clean builds, fast
+            performance, and designs that convert.
+          </p>
+
+          {/* 🔘 View All Projects button (in the pointed right-side space) */}
+        </div>
 
         {/* Masonry Grid */}
-        <div ref={gridRef} id="container" className="w-full px-2 sm:px-3 pb-10">
-          {/* Sizer defines column width:
+        <div
+          ref={gridRef}
+          id="container"
+          className="w-full px-2 sm:px-3 pb-10 relative mt-[40px]"
+        >
+          <div className="text-right absolute right-[28px] top-[-43px] w-[205px]">
+            <Link
+              href="/portfolio"
+              className="hidden md:inline-flex items-center gap-2 absolute right-0 top-[14px] -translate-y-1/2
+                       rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white
+                       backdrop-blur hover:bg-white/10 transition-colors"
+            >
+              View All Works
+            </Link>
+          </div>
+          {/* Column sizer:
               - mobile: full width
               - sm: 2 columns
               - lg: 3 columns */}
@@ -137,9 +156,7 @@ export default function MasonryGallery() {
                 key={item.id}
                 className={[
                   "grid-item",
-                  // Match the sizer widths so Masonry packs perfectly
                   "w-full sm:w-1/2 lg:w-[32%]",
-                  // Optional: let expanded add subtle emphasis without breaking width
                   isExpanded ? "scale-[1.01]" : "scale-100",
                   "cursor-pointer overflow-hidden transition-transform duration-200",
                 ].join(" ")}

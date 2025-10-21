@@ -122,7 +122,7 @@ export default function AllPortfolio() {
   };
 
   return (
-    <div className="w-full bg-[#0B0710]">
+    <div className="w-full bg-[#0B0710] md:py-20 py-16">
       <div className="mx-auto max-w-[1405px] px-4 md:px-6">
         <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-3 text-white">
           Our Works
@@ -142,9 +142,9 @@ export default function AllPortfolio() {
                     setTimeout(() => safeLayout(), 0);
                   }}
                   className={[
-                    "whitespace-nowrap rounded-[30px] px-[35px] py-2 text-[16px] font-medium",
+                    "whitespace-nowrap rounded-[30px] px-[35px] py-2 text-[16px] font-medium transition-all duration-200 cursor-pointer",
                     active === t.id
-                      ? "bg-white text-neutral-900"
+                      ? "bg-gradient-to-r from-[#5c63fa] to-[#a868fa] text-white shadow-[0_0_15px_rgba(92,99,250,0.35)]"
                       : "text-neutral-200 hover:bg-neutral-700/80",
                   ].join(" ")}
                 >

@@ -1,5 +1,7 @@
 import AllPortfolio from "@/components/modules/Home/Portfolio/AllPortfolio";
 import StatsSection from "@/components/modules/Home/Portfolio/StatsSection";
+import Testimonials from "@/components/modules/Home/Portfolio/Testimonials";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,28 +66,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ===== Testimonials ===== */}
-      <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold">Client Feedback</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Testimonial
-              quote="The site loads insanely fast and the funnel prints leads. Easily our best investment this year."
-              name="Aaron M."
-              role="Founder, Home Services"
-            />
-            <Testimonial
-              quote="They understood the conversion game. Pixel-perfect and SEO ready from day one."
-              name="Lydia S."
-              role="CMO, SaaS"
-            />
-            <Testimonial
-              quote="From crypto launchpad to docs—everything shipped on time with clean code."
-              name="Drew K."
-              role="CTO, Web3"
-            />
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* ===== CTA ===== */}
       <section className="relative">
@@ -102,10 +83,10 @@ export default function PortfolioPage() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="tglink"
               className="rounded-full bg-gradient-to-r from-[#5c63fa] to-[#a868fa] px-6 py-3 text-base font-semibold shadow-[0_10px_30px_rgba(92,99,250,0.35)] hover:opacity-95 transition"
             >
-              Get a 20-min Strategy Call
+              Lets Talk Now
             </Link>
           </div>
         </div>
