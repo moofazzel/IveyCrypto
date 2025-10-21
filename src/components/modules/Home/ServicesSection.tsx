@@ -1,6 +1,3 @@
-// components/ServicesSection.tsx
-"use client";
-
 import {
   BarChart,
   Box,
@@ -34,10 +31,12 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-sm">
-            Crypto Management Services
+            Our Core Services
           </h2>
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">
-            Crypto management services optimize and secure crypto portfolios.
+            Ivey Solutions delivers full-stack web development, crypto
+            integration, brand design, and secure moderation — engineered for
+            growth and trust.
           </p>
         </div>
 
