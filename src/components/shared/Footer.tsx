@@ -19,7 +19,7 @@ export default function Footer({
   }, []);
 
   return (
-    <footer className="relative isolate overflow-hidden pt-64 pb-10">
+    <footer className="relative isolate overflow-hidden pt-48 pb-10">
       {/* BG video */}
       <video
         ref={videoRef}
@@ -44,17 +44,17 @@ export default function Footer({
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#11C55C] text-white">
               {/* quick “C” mark — replace with your logo if you have one */}
-              <span className="text-lg font-extrabold">c</span>
+              <span className="text-lg font-extrabold">IS</span>
             </span>
             <span className="text-2xl font-semibold tracking-tight text-white">
-              Cryp
+              Ivey Solutions
             </span>
           </div>
 
           {/* socials (round white chips) */}
           <div className="flex items-center gap-4">
-            <IconChip href="https://facebook.com" aria="Facebook">
-              {/* Facebook */}
+            {/* <IconChip href="https://facebook.com" aria="Facebook">
+              Facebook
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -64,7 +64,7 @@ export default function Footer({
               >
                 <path d="M22 12.07C22 6.5 17.52 2 11.95 2A10.05 10.05 0 0 0 2 12a10 10 0 0 0 8.44 9.87v-7H7.9v-3h2.54V9.41c0-2.5 1.5-3.88 3.79-3.88 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.58v1.9h2.78l-.44 3h-2.34v7A10 10 0 0 0 22 12.07z" />
               </svg>
-            </IconChip>
+            </IconChip> */}
 
             <IconChip href="https://twitter.com" aria="X">
               {/* X / Twitter */}
@@ -92,8 +92,8 @@ export default function Footer({
               </svg>
             </IconChip>
 
-            <IconChip href="https://instagram.com" aria="Instagram">
-              {/* Instagram */}
+            {/* <IconChip href="https://instagram.com" aria="Instagram">
+              Instagram
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -103,7 +103,7 @@ export default function Footer({
               >
                 <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.75-3.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" />
               </svg>
-            </IconChip>
+            </IconChip> */}
           </div>
         </div>
 
@@ -112,18 +112,23 @@ export default function Footer({
 
         {/* bottom row */}
         <div className="flex flex-col items-center justify-between gap-3 py-8 text-[13px] text-white/70 sm:flex-row">
-          <p className="whitespace-pre">© Cryp – Built by Grooic × Framer</p>
+          <p className="whitespace-pre">
+            © Ivey Solutions ; made by{" "}
+            <Link target="_blank" href="https://www.aptecode.com/" className="text-orange-500">
+              APTECODE
+            </Link>{" "}
+          </p>
 
           <div className="flex items-center gap-4">
-            <Link
-              href="/privacy"
-              className="hover:text-white transition-colors"
-            >
-              Privacy Policy
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
             </Link>
             <span className="text-white/30">|</span>
-            <Link href="/terms" className="hover:text-white transition-colors">
-              Terms &amp; Conditions
+            <Link
+              href="mailto:contact@iveysolutions.com"
+              className="hover:text-white transition-colors"
+            >
+              contact@iveysolutions.com
             </Link>
           </div>
         </div>

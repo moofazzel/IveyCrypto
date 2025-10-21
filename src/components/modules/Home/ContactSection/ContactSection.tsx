@@ -240,11 +240,11 @@ export default function ContactSection() {
 
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
-                Crypto Portfolio Size
+                Project Type
               </label>
               <input
                 type="text"
-                placeholder="Select your portfolio size"
+                placeholder="Utility Or Meme Project"
                 value={values.portfolioSize}
                 onChange={handleChange("portfolioSize")}
                 className="w-full rounded-full border border-white/10 bg-[#16181B] px-5 py-4 text-white placeholder:text-white/40 outline-none shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] focus:border-white/20"
@@ -258,11 +258,11 @@ export default function ContactSection() {
 
             <div>
               <label className="mb-2 block text-sm font-semibold text-white">
-                Investment Goals
+                Estimated Launching Time
               </label>
               <input
                 type="text"
-                placeholder="Select your investment goal"
+                placeholder="One hour | One day | etc."
                 value={values.goals}
                 onChange={handleChange("goals")}
                 className="w-full rounded-full border border-white/10 bg-[#16181B] px-5 py-4 text-white placeholder:text-white/40 outline-none shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] focus:border-white/20"
