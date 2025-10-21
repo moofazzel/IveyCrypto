@@ -256,22 +256,22 @@ export default function TestimonialSection() {
             Join Thousands of Happy Investors.
           </p>
 
-          <div className="mt-10 flex items-center gap-5">
+          <div className="mt-10 flex items-center gap-14">
             <button
               type="button"
               onClick={prev}
               aria-label="Previous testimonial"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#17181C] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] transition-transform hover:scale-105"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#17181C] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] transition-transform hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:to-green-500"
             >
               {/* ← */}
               <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
               >
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
               </svg>
             </button>
 
@@ -279,17 +279,16 @@ export default function TestimonialSection() {
               type="button"
               onClick={next}
               aria-label="Next testimonial"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#17181C] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] transition-transform hover:scale-105"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#17181C] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500"
             >
-              {/* → */}
               <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
               >
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L12.17 12z" />
+                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
               </svg>
             </button>
           </div>
