@@ -2,7 +2,6 @@ import AllPortfolio from "@/components/modules/Home/Portfolio/AllPortfolio";
 import StatsSection from "@/components/modules/Home/Portfolio/StatsSection";
 import Testimonials from "@/components/modules/Home/Portfolio/Testimonials";
 
-import Image from "next/image";
 import Link from "next/link";
 
 export default function PortfolioPage() {
@@ -97,71 +96,11 @@ export default function PortfolioPage() {
 
 /* ---------- Small Reusable Components ---------- */
 
-function StatCard({ kpi, label }: { kpi: string; label: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-[#0F0E15] p-5 sm:p-6">
-      <div className="text-2xl sm:text-3xl font-extrabold">{kpi}</div>
-      <div className="mt-1 text-sm text-white/60">{label}</div>
-    </div>
-  );
-}
-
-function ProjectCard({
-  title,
-  desc,
-  img,
-  chips,
-}: {
-  title: string;
-  desc: string;
-  img: string;
-  chips: string[];
-}) {
-  return (
-    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0F0E15]">
-      <div className="relative aspect-[16/10]">
-        <Image
-          src={img}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-          sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-          priority={false}
-        />
-      </div>
-      <div className="p-5 sm:p-6">
-        <h3 className="text-lg sm:text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-sm text-white/70">{desc}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {chips.map((c) => (
-            <span
-              key={c}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-            >
-              {c}
-            </span>
-          ))}
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function Testimonial({
-  quote,
-  name,
-  role,
-}: {
-  quote: string;
-  name: string;
-  role: string;
-}) {
-  return (
-    <blockquote className="h-full rounded-2xl border border-white/10 bg-[#0F0E15] p-6">
-      <p className="text-white/90">“{quote}”</p>
-      <footer className="mt-4 text-sm text-white/60">
-        — {name}, {role}
-      </footer>
-    </blockquote>
-  );
-}
+// function StatCard({ kpi, label }: { kpi: string; label: string }) {
+//   return (
+//     <div className="rounded-2xl border border-white/10 bg-[#0F0E15] p-5 sm:p-6">
+//       <div className="text-2xl sm:text-3xl font-extrabold">{kpi}</div>
+//       <div className="mt-1 text-sm text-white/60">{label}</div>
+//     </div>
+//   );
+// }

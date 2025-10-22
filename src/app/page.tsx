@@ -7,6 +7,8 @@ import HowItWorks from "@/components/modules/Home/HowItWorks";
 import MovingText from "@/components/modules/Home/MovingText";
 import PortfolioMasonry from "@/components/modules/Home/PortfolioMasonry";
 import ServicesSection from "@/components/modules/Home/ServicesSection";
+import SolutionsSection from "@/components/modules/Home/Solutions/SolutionsSection";
+import TestimonialSection from "@/components/modules/Home/Testimonials/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -15,6 +17,9 @@ export default function Home() {
       <MovingText />
       <About />
       <ServicesSection />
+      <SolutionsSection />
+      <CTASection />
+      <TestimonialSection />
 
       {/* <MasonryGallery /> */}
       <PortfolioMasonry />

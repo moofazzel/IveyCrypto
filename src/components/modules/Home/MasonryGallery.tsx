@@ -35,12 +35,6 @@ const ITEMS: Item[] = [
   { id: "bg3", src: "/images/portfolio/bg3.jpg", alt: "big 3", cat: "memes" },
 ];
 
-const TABS: { id: Category; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "memes", label: "Memes" },
-  { id: "utility", label: "Utility" },
-];
-
 type MasonryInstance = {
   layout: () => void;
   destroy: () => void;
@@ -48,6 +42,7 @@ type MasonryInstance = {
 
 export default function MasonryGallery() {
   const [active, setActive] = useState<Category>("all");
+  console.log(setActive);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const gridRef = useRef<HTMLDivElement | null>(null);
