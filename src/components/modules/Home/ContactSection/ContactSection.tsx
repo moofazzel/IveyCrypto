@@ -123,7 +123,7 @@ export default function ContactSection() {
   }, [toast]);
 
   return (
-    <section className="relative isolate overflow-hidden py-24">
+    <section className="relative isolate overflow-hidden py-24 bg-[#0C0912]">
       {/* ✅ Success Toast */}
       <Toast message={toast ?? ""} position="right" />
       {/* To center it instead: <Toast message={toast ?? ''} position="center" /> */}
