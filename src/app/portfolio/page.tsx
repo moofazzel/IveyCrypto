@@ -1,7 +1,6 @@
-import AllPortfolio from "@/components/modules/Home/Portfolio/AllPortfolio";
-import StatsSection from "@/components/modules/Home/Portfolio/StatsSection";
-import Testimonials from "@/components/modules/Home/Portfolio/Testimonials";
-
+import AllPortfolio from "@/components/modules/Portfolio/AllPortfolio";
+import StatsSection from "@/components/modules/Portfolio/StatsSection";
+import Testimonials from "@/components/modules/Portfolio/Testimonials";
 import Link from "next/link";
 
 export default function PortfolioPage() {

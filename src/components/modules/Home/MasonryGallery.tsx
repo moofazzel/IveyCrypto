@@ -2,6 +2,7 @@
 
 import imagesLoaded from "imagesloaded";
 import Masonry from "masonry-layout";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -158,7 +159,7 @@ export default function MasonryGallery() {
                 onClick={() => onItemClick(item.id)}
               >
                 <div className="p-2">
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.alt ?? ""}
                     className="block w-full select-none rounded-md border-[10px] border-white sm:border-[8px]"
