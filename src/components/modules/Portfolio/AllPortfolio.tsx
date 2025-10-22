@@ -17,106 +17,116 @@ type Item = {
 };
 
 const ITEMS: Item[] = [
-  // ----- bg* (utility: brand/landing) -----
+  // ----- bg* (memes landing pages) -----
   {
     id: "bg1",
     src: "/images/portfolio/bg1.jpg",
-    title: "Wafstars Token Landing",
-    blurb: "Single-page crypto landing with tokenomics, utilities, and CTA.",
-    cat: "utility",
-    href: "https://example.com",
+    title: "Marutaru",
+    blurb:
+      "Playful meme-coin landing with tokenomics, roadmap, and a clear CTA.",
+    cat: "memes",
+    href: "https://marutaru.vercel.app/",
   },
   {
     id: "bg2",
     src: "/images/portfolio/bg2.jpg",
-    title: "ShibaX Presale Page",
-    blurb: "Bold red presale layout with roadmap, FAQ, and smart CTA sections.",
-    cat: "utility",
-    href: "https://example.com",
+    title: "Harambe",
+    blurb:
+      "High-contrast presale page themed around Harambe with roadmap, FAQ, and mint CTA.",
+    cat: "memes",
+    href: "https://harambe-tawny.vercel.app/",
   },
   {
     id: "bg3",
     src: "/images/portfolio/bg3.jpg",
-    title: "Meme Coin Microsite",
-    blurb: "Two-column brand site featuring About, tokenomics, and socials.",
-    cat: "utility",
-    href: "https://example.com",
+    title: "Papi",
+    blurb:
+      "Two-column meme site featuring About, tokenomics, and social links.",
+    cat: "memes",
+    href: "https://papi-3.vercel.app/",
   },
 
-  // ----- tl* (memes/creative/tall) -----
+  // ----- tl* (memes/creative) -----
   {
     id: "tl1",
     src: "/images/portfolio/tl1.jpg",
-    title: "Degen Pin — Retro Site",
-    blurb: "Pixel-art hero with side-scroll vibe and chunky callouts.",
+    title: "Decopin",
+    blurb: "Retro pixel-art homepage with side-scroll vibe and chunky CTAs.",
     cat: "memes",
-    href: "https://example.com",
+    href: "https://decopin.vip/",
   },
   {
     id: "tl2",
     src: "/images/portfolio/tl2.jpg",
-    title: "Space Crew Promo",
-    blurb: "Dark cinematic layout with character panels and neon accents.",
-    cat: "memes",
-    href: "https://example.com",
+    title: "Aster Boy",
+    blurb:
+      "Dark, sci-fi landing with character panels, hero section, and strong CTA.",
+    cat: "utility",
+    href: "https://astarboy.vercel.app/",
   },
   {
     id: "tl3",
     src: "/images/portfolio/tl3.jpg",
-    title: "The CHAD Landing",
-    blurb: "Clean green one-pager for community meme culture.",
+    title: "ABS CHAD",
+    blurb:
+      "Bold green community meme one-pager with token highlights and socials.",
     cat: "memes",
-    href: "https://example.com",
+    href: "https://abstractchad.xyz/",
   },
   {
     id: "tl4",
     src: "/images/portfolio/tl4.jpg",
-    title: "Bear Shop Landing",
-    blurb: "Black/orange storefront layout with product rows and CTAs.",
+    title: "Uzu Chan",
+    blurb:
+      "Black/orange brand microsite with product-style sections and clear CTAs.",
     cat: "memes",
-    href: "https://example.com",
+    href: "https://www.uzuchan.vip/",
   },
   {
     id: "tl5",
     src: "/images/portfolio/tl5.jpg",
-    title: "Desert Marketplace UI",
-    blurb: "Warm 3D-style product showcase with card grid.",
+    title: "BASETET",
+    blurb:
+      "Playful Base-themed showcase with 3D-style card grid and shop feel.",
     cat: "memes",
-    href: "https://example.com",
+    href: "https://basetet.vercel.app/",
   },
   {
     id: "tl6",
     src: "/images/portfolio/tl6.jpg",
-    title: "Dino Quest Teaser",
-    blurb: "Pastel desert scene with character card and mint CTA.",
+    title: "Poppy the Hippo",
+    blurb: "Whimsical desert-themed landing with character card and mint CTA.",
     cat: "memes",
-    href: "https://example.com",
+    href: "https://www.poppythehippo.fun/",
   },
 
   // ----- wd* (utility: web/app/dashboards) -----
   {
     id: "wd1",
     src: "/images/portfolio/wd1.jpg",
-    title: "Wallet Connect Screens",
-    blurb: "Dark UI for connect-wallet, network switch, and tx states.",
+    title: "Ethernet Dev",
+    blurb:
+      "Developer UI for wallet connect, network switch, and transaction states.",
     cat: "utility",
-    href: "https://example.com",
+    href: "https://ethernet-dev.vercel.app/",
   },
   {
     id: "wd2",
     src: "/images/portfolio/wd2.jpg",
-    title: "Game Lobby Interface",
-    blurb: "In-game menu with server browser, status, and map rotation.",
+    title: "Rhino Ninja",
+    blurb:
+      "Game lobby interface with server list, status indicators, and map rotation.",
     cat: "utility",
-    href: "https://example.com",
+    href: "https://rhino.ninja/",
   },
   {
     id: "wd3",
     src: "/images/portfolio/wd3.jpg",
-    title: "Cartoon Hero Banner",
-    blurb: "Illustration banner used across sections and promos.",
+    title: "Ignis AI",
+    blurb:
+      "AI brand landing with illustration hero and feature/promo sections.",
     cat: "utility",
-    href: "https://example.com",
+    href: "https://ignis-iota.vercel.app/",
   },
 ];
 
@@ -154,7 +164,7 @@ export default function PortfolioGallery() {
 
   return (
     <section className="w-full bg-[#0B0710]">
-      <div className="mx-auto max-w-[1405px] px-4 md:px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
         {/* Header */}
         <header className="mb-8 md:mb-10 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white">
@@ -199,7 +209,7 @@ export default function PortfolioGallery() {
                     src={it.src}
                     alt={it.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-500 "
                     sizes="(max-width: 768px) 92vw, (max-width: 1200px) 44vw, 28vw"
                   />
                   <span className="absolute top-3 right-3 rounded-full bg-black/60 text-white/90 text-xs px-2 py-1 border border-white/10">
@@ -230,7 +240,14 @@ export default function PortfolioGallery() {
                   {/* CTA */}
                   <div className="mt-5">
                     {it.href ? (
-                      <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#5c63fa] to-[#a868fa] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(92,99,250,0.35)] group-hover:opacity-95 transition">
+                      <span
+                        className="btn-hover grad_button inline-flex items-center rounded-full px-4 py-2 text-sm  text-white shadow-[0_8px_24px_rgba(92,99,250,0.35)] transition-all duration-500 ease-in-out w-[136px] text-center justify-center h-[50px]"
+                        style={{
+                          fontSize: "17px",
+                          height: "48px",
+                          marginTop: "6px",
+                        }}
+                      >
                         View live
                       </span>
                     ) : (
@@ -241,7 +258,7 @@ export default function PortfolioGallery() {
                   </div>
                 </div>
 
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />
+                <div className="pointer-events-none absolute inset-0 opacity-0  transition-opacity duration-300 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />
               </>
             );
 

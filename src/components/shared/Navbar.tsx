@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import GradientButton from "./GradientButton";
@@ -9,8 +9,6 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
 
   { href: "/portfolio", label: "Portfolio" },
-
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -46,27 +44,27 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden items-center gap-7 lg:flex">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="text-[18px] font-medium text-white/80 hover:text-white"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Right Side — Nav Links + CTA */}
+        <div className="flex items-center gap-7">
+          {/* Nav Links */}
+          <ul className="flex items-center gap-7">
+            {NAV_LINKS.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-[18px] font-medium text-white/80 hover:text-white transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Right CTAs (desktop) — gradient ring default, gradient fill on hover */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link href="tel:9179003111">
-            <GradientButton className="w-[210px]">
+          {/* CTA Button */}
+          <Link href="tglink">
+            <GradientButton className="w-[160px]">
               <div className="flex items-center justify-center gap-3">
-                <Phone size={18} />
-                <span className="tracking-wide">917 900 3111</span>
+                <span className="tracking-wide">Let&apos;s Talk</span>
               </div>
             </GradientButton>
           </Link>
@@ -130,12 +128,12 @@ export default function Navbar() {
 
           {/* BOOK NOW */}
           <div className="pt-8">
-            <Link
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-sm bg-black px-6 py-4 text-sm font-semibold text-white"
-            >
-              BOOK NOW <span className="ml-2">→</span>
+            <Link href="tglink">
+              <GradientButton className="w-[170px]">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="tracking-wide">Let&apos;s Talk</span>
+                </div>
+              </GradientButton>
             </Link>
           </div>
         </nav>

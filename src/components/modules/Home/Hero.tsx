@@ -28,9 +28,9 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/">
-                <GradientButton className="w-[333px]  ">
-                  Book a Free Consultation
+              <Link href="tglink">
+                <GradientButton className="w-[230px]  ">
+                  Get Started Now
                 </GradientButton>
               </Link>
             </div>

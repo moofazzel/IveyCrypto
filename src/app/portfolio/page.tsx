@@ -1,6 +1,7 @@
 import AllPortfolio from "@/components/modules/Portfolio/AllPortfolio";
 import StatsSection from "@/components/modules/Portfolio/StatsSection";
 import Testimonials from "@/components/modules/Portfolio/Testimonials";
+import GradientButton from "@/components/shared/GradientButton";
 import Link from "next/link";
 
 export default function PortfolioPage() {
@@ -35,11 +36,10 @@ export default function PortfolioPage() {
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 {/* primary — matches your button gradient */}
-                <Link
-                  href="/contact"
-                  className="rounded-full bg-gradient-to-r from-[#5c63fa] to-[#a868fa] px-6 py-3 text-sm sm:text-base font-semibold shadow-[0_10px_30px_rgba(92,99,250,0.35)] hover:opacity-95 transition"
-                >
-                  Book a Free Consultation
+                <Link href="tglink">
+                  <GradientButton className="w-[230px]  ">
+                    Get Started Now
+                  </GradientButton>
                 </Link>
 
                 {/* secondary */}
@@ -68,11 +68,11 @@ export default function PortfolioPage() {
 
       {/* ===== CTA ===== */}
       <section className="relative">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(900px_500px_at_50%_-10%,rgba(99,102,241,0.18),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#12101A] to-[#161423] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div className="absolute inset-0 pointer-events-none " />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 ">
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#12101A] to-[#161423] p-6 sm:p-8 md:px-10 md:py-17 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 ">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-[16px]">
                 Let’s ship something revenue-ready
               </h3>
               <p className="mt-2 text-white/70">
@@ -80,12 +80,9 @@ export default function PortfolioPage() {
                 price—no fluff.
               </p>
             </div>
-            <Link
-              href="tglink"
-              className="rounded-full bg-gradient-to-r from-[#5c63fa] to-[#a868fa] px-6 py-3 text-base font-semibold shadow-[0_10px_30px_rgba(92,99,250,0.35)] hover:opacity-95 transition"
-            >
-              Lets Talk Now
-            </Link>
+            <GradientButton className="w-[280px]">
+              <Link href="tglink">Discuss Your Project</Link>
+            </GradientButton>
           </div>
         </div>
       </section>
