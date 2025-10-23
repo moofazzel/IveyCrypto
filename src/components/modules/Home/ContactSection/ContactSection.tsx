@@ -1,5 +1,6 @@
 "use client";
 
+import GradientButton from "@/components/shared/GradientButton";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
@@ -123,7 +124,7 @@ export default function ContactSection() {
   }, [toast]);
 
   return (
-    <section className="relative isolate overflow-hidden py-24">
+    <section className="relative isolate overflow-hidden py-24 bg-[#0C0912]">
       {/* ✅ Success Toast */}
       <Toast message={toast ?? ""} position="right" />
       {/* To center it instead: <Toast message={toast ?? ''} position="center" /> */}
@@ -272,25 +273,14 @@ export default function ContactSection() {
               )}
             </div>
 
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1 md:col-span-2 text-center">
               <button
                 type="submit"
-                className="
-                relative overflow-hidden mx-auto block rounded-full px-10 py-4
-                text-base font-semibold text-white
-                [background:linear-gradient(270deg,rgb(6,103,237)_0%,rgb(1,224,34)_100%)]
-                shadow-[0_0_0_1px_rgba(255,255,255,0.10)_inset]
-                transition-all duration-500 ease-in-out
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40
-
-                before:content-[''] before:absolute before:inset-0 before:rounded-full
-                before:[background:linear-gradient(270deg,rgb(1,224,34)_0%,rgb(6,103,237)_100%)]
-                before:opacity-0 before:transition-opacity before:duration-700 before:ease-in-out
-                before:pointer-events-none before:z-0
-                hover:before:opacity-100
-              "
+                
               >
-                <span className="relative z-10">Submit</span>
+                <GradientButton className="w-48">
+                  <span className="relative z-10">Submit</span>
+                </GradientButton>
               </button>
             </div>
           </form>

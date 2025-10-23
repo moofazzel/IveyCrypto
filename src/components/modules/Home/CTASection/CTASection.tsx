@@ -1,5 +1,6 @@
 // app/components/CTASection.tsx
 
+import GradientButton from "@/components/shared/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,24 +45,10 @@ export default function CTASection() {
         </p>
 
         <div className="mt-8">
-          <Link
-            href="/https://t.me/mahmud_3322"
-            className="
-            relative inline-flex items-center justify-center overflow-hidden
-            rounded-[58px] px-7 py-4
-            text-sm sm:text-base font-medium text-white
-            [background:linear-gradient(270deg,rgb(6,103,237)_0%,rgb(1,224,34)_100%)]
-            shadow-[0_0_0_1px_rgba(255,255,255,0.10)_inset]
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40
-            focus-visible:ring-offset-2 focus-visible:ring-offset-black/60
-
-            before:content-[''] before:absolute before:inset-0 before:rounded-[58px]
-            before:[background:linear-gradient(270deg,rgb(1,224,34)_0%,rgb(6,103,237)_100%)]
-            before:opacity-0 before:transition-opacity before:duration-700 before:ease-in-out
-            before:z-0 hover:before:opacity-100
-          "
-          >
-            <span className="relative z-10">Send a Message</span>
+          <Link href="/https://t.me/mahmud_3322">
+            <GradientButton className="w-52">
+              <span className="relative z-10">Send a Message</span>
+            </GradientButton>
           </Link>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Footer({
   }, []);
 
   return (
-    <footer className="relative isolate overflow-hidden pt-48 pb-10">
+    <footer className="relative isolate overflow-hidden pt-44 pb-10">
       {/* BG video */}
       <video
         ref={videoRef}
@@ -39,10 +39,10 @@ export default function Footer({
       {/* content */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* top row */}
-        <div className="flex items-center justify-between pb-28">
+        <div className="flex items-center justify-between pb-24">
           {/* logo */}
           <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#11C55C] text-white">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#5c63fa] text-white">
               {/* quick “C” mark — replace with your logo if you have one */}
               <span className="text-lg font-extrabold">IS</span>
             </span>
@@ -111,8 +111,8 @@ export default function Footer({
         <div className="h-[1px] bg-white/15" />
 
         {/* bottom row */}
-        <div className="flex flex-col items-center justify-between gap-3 py-8 text-[13px] text-white/70 sm:flex-row">
-          <p className="whitespace-pre">
+        <div className="flex flex-col items-center justify-between gap-3 py-8 text-md text-white/70 sm:flex-row">
+          <p className="whitespace-pre;">
             © Ivey Solutions ; made by{" "}
             <Link target="_blank" href="https://www.aptecode.com/" className="text-orange-500">
               APTECODE
