@@ -85,7 +85,7 @@ export default function FAQSection({
                         className={clsx(
                           "rounded-2xl p-[1px] transition-colors",
                           active
-                            ? "bg-[linear-gradient(90deg,#00E022_0%,#0667ED_100%)]"
+                            ? "bg-[linear-gradient(90deg,#5c63fa_0%,#a868fa_100%)]"
                             : "bg-transparent"
                         )}
                       >
@@ -110,7 +110,7 @@ export default function FAQSection({
                             <span
                               className={clsx(
                                 "relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
-                                "bg-[linear-gradient(180deg,#01E022_0%,#0667ED_100%)]",
+                                "bg-[linear-gradient(180deg,#5c63fa_0%,#a868fa_100%)]",
                                 "shadow-[0_0_0_1px_rgba(255,255,255,0.12)_inset]",
                                 "transition-transform duration-300",
                                 active

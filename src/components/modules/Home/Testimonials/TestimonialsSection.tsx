@@ -46,7 +46,7 @@ const Frame: React.FC<{ children: React.ReactNode; className?: string }> = ({
   className = "",
 }) => (
   <div
-    className={`inline-block self-start rounded-2xl p-[2px] [background:linear-gradient(90deg,#00E022_0%,#0667ED_100%)] ${className}`}
+    className={`inline-block self-start rounded-2xl p-[2px] [background:linear-gradient(90deg,#5c63fa_0%,#a868fa_100%)] ${className}`}
   >
     <div className="rounded-2xl bg-[#0D0F12] p-6 sm:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset]">
       {children}
