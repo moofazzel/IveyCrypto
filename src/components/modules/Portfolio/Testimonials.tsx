@@ -13,50 +13,32 @@ type Testimonial = {
   image: string;
 };
 
-const ITEMS: Testimonial[] = [
+const BASE_ITEMS: Testimonial[] = [
   {
     quote:
-      "The site loads insanely fast and the funnel prints leads. Easily our best investment this year.",
-    name: "Aaron M.",
-    role: "Founder, Home Services",
-    image: "/images/clients/client1.jpg",
+      "Our meme token went live on Base — full site, presale dashboard, and LP lock in 3 days. Smooth launch, no downtime, and the community loved the design. Literally printed holders overnight.",
+    name: "Chadski",
+    role: "Founder — Meme Token (Base)",
+    image: "/images/testimonials/chadski.jpg",
   },
   {
     quote:
-      "They understood the conversion game. Pixel-perfect and SEO ready from day one.",
-    name: "Lydia S.",
-    role: "CMO, SaaS",
-    image: "/images/clients/client2.jpg",
+      "They built our staking and claim dApp for a utility token on BSC. Clean UI, fast wallet connect, and detailed docs. We scaled from 200 to 4K active wallets in the first week.",
+    name: "Jordi",
+    role: "Product Lead — Utility Project (BSC)",
+    image: "/images/testimonials/jordi.jpg",
   },
   {
     quote:
-      "From crypto launchpad to docs—everything shipped on time with clean code.",
-    name: "Drew K.",
-    role: "CTO, Web3",
-    image: "/images/clients/client3.jpg",
-  },
-  {
-    quote:
-      "Smart strategy + execution. Our new site converts ~3x better on mobile.",
-    name: "Rachel P.",
-    role: "Head of Growth, DTC",
-    image: "/images/clients/client4.jpg",
-  },
-  {
-    quote:
-      "Great communication, fast iterations, and measurable CRO improvements.",
-    name: "Daniel S.",
-    role: "Product Lead, Fintech",
-    image: "/images/clients/client5.jpg",
-  },
-  {
-    quote:
-      "They shipped a performant Next.js stack and trained our team—super smooth.",
-    name: "Victor L.",
-    role: "Engineering Manager",
-    image: "/images/clients/client6.jpg",
+      "Handled our multi-chain presale (SOL + ETH) flawlessly. Integrated KYC, audit, and live progress bar with real-time updates. Hit hard cap within 48 hours.",
+    name: "Ser Blue",
+    role: "CTO — Presale Launch (Solana & Ethereum)",
+    image: "/images/testimonials/ser-blue.jpg",
   },
 ];
+
+// Repeat the 3 testimonials to fill the slider naturally
+const ITEMS = [...BASE_ITEMS, ...BASE_ITEMS, ...BASE_ITEMS];
 
 export default function Testimonials() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -65,7 +47,7 @@ export default function Testimonials() {
     <section className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-white">
-          Client Feedback
+          Clients Feedback
         </h2>
 
         <div
@@ -90,7 +72,7 @@ export default function Testimonials() {
           >
             {ITEMS.map((t, i) => (
               <SwiperSlide key={i}>
-                <article className="h-full rounded-2xl border border-white/10 bg-[#0F0E15] p-6 shadow-[0_6px_20px_rgba(0,0,0,0.35)] flex flex-col justify-between">
+                <article className="h-full rounded-2xl border border-white/10 bg-[#0F0E15] p-6 shadow-[0_6px_20px_rgba(0,0,0,0.35)] flex flex-col justify-between md:h-[267px]">
                   <p className="text-white/90 leading-relaxed mb-6">
                     “{t.quote}”
                   </p>

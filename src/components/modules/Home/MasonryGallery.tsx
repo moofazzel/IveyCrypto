@@ -2,6 +2,7 @@
 
 import imagesLoaded from "imagesloaded";
 import Masonry from "masonry-layout";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -35,12 +36,6 @@ const ITEMS: Item[] = [
   { id: "bg3", src: "/images/portfolio/bg3.jpg", alt: "big 3", cat: "memes" },
 ];
 
-const TABS: { id: Category; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "memes", label: "Memes" },
-  { id: "utility", label: "Utility" },
-];
-
 type MasonryInstance = {
   layout: () => void;
   destroy: () => void;
@@ -48,6 +43,7 @@ type MasonryInstance = {
 
 export default function MasonryGallery() {
   const [active, setActive] = useState<Category>("all");
+  console.log(setActive);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const gridRef = useRef<HTMLDivElement | null>(null);
@@ -163,7 +159,7 @@ export default function MasonryGallery() {
                 onClick={() => onItemClick(item.id)}
               >
                 <div className="p-2">
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.alt ?? ""}
                     className="block w-full select-none rounded-md border-[10px] border-white sm:border-[8px]"

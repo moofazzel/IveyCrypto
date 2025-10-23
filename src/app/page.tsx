@@ -4,8 +4,8 @@ import CTASection from "@/components/modules/Home/CTASection/CTASection";
 import FAQSection from "@/components/modules/Home/FAQSection/FAQSection";
 import Hero from "@/components/modules/Home/Hero";
 import HowItWorks from "@/components/modules/Home/HowItWorks";
-import MasonryGallery from "@/components/modules/Home/MasonryGallery";
 import MovingText from "@/components/modules/Home/MovingText";
+import PortfolioMasonry from "@/components/modules/Home/PortfolioMasonry";
 import ServicesSection from "@/components/modules/Home/ServicesSection";
 import SolutionsSection from "@/components/modules/Home/Solutions/SolutionsSection";
 import TestimonialSection from "@/components/modules/Home/Testimonials/TestimonialsSection";
@@ -21,7 +21,8 @@ export default function Home() {
       <CTASection />
       <TestimonialSection />
 
-      <MasonryGallery />
+      {/* <MasonryGallery /> */}
+      <PortfolioMasonry />
       <HowItWorks />
       <CTASection />
       <FAQSection />
