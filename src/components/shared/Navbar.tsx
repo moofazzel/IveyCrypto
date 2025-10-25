@@ -45,7 +45,7 @@ export default function Navbar() {
         </Link>
 
         {/* Right Side — Nav Links + CTA */}
-        <div className="flex items-center gap-7">
+        <div className="md:flex items-center gap-7 hidden">
           {/* Nav Links */}
           <ul className="flex items-center gap-7">
             {NAV_LINKS.map((l) => (

@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "Ivey Solutions | Full-Stack Web Development & Creative Branding",
   description:
     "Ivey Solutions builds high-performance websites and digital experiences using Next.js, Tailwind CSS, and modern technologies. From full-stack web apps to AI-powered UX, crypto integration, and creative brand design — we craft solutions that connect technology, design, and strategy to help your business grow.",
+  icons: {
+    icon: "/images/about/abt.jpg", // path inside /public
+    shortcut: "/images/about/abt.jpg",
+    apple: "/images/about/abt.jpg",
+  },
   keywords: [
     "Ivey Solutions",
     "web development agency",
