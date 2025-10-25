@@ -88,7 +88,7 @@ export default function SolutionsSection({
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#0B0A0F] to-transparent" />
 
       {/* Content */}
-      <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
+      <div className="mx-auto max-w-xl px-4 text-center sm:px-6">
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
           We Build. We Hype. We Grow.
         </h2>

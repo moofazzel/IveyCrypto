@@ -25,7 +25,7 @@ const DEFAULT_ITEMS = [
 
 export default function MovingText({
   items = DEFAULT_ITEMS,
-  speed = 40,
+  speed = 90,
   direction = "left",
   strokeColor = "#a868fa",
   fontSize = "clamp(40px, 8vw, 150px)",

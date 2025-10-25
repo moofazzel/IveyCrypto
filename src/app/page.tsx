@@ -18,7 +18,7 @@ export default function Home() {
       <About />
       <ServicesSection />
       <SolutionsSection />
-      <CTASection />
+      {/* <CTASection /> */}
       <TestimonialSection />
 
       {/* <MasonryGallery /> */}

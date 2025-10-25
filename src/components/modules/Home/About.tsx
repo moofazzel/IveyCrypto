@@ -4,6 +4,13 @@ import { Award, Briefcase, Users } from "lucide-react";
 import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+const cube1 = "/images/about/blocks/1.avif";
+const cube2 = "/images/about/blocks/2.avif";
+const cube3 = "/images/about/blocks/3.avif";
+const cube4 = "/images/about/blocks/4.avif";
+const cube5 = "/images/about/blocks/5.avif";
+const cube6 = "/images/about/blocks/6.avif";
+const cube7 = "/images/about/blocks/7.avif";
 
 type StatCardProps = {
   icon: React.ReactNode;
@@ -57,6 +64,9 @@ export default function About() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* bottom blend into next section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#0B0A0F] to-transparent" />
+
       {/* subtle grid glow */}
       <div
         aria-hidden
@@ -125,17 +135,69 @@ export default function About() {
           {/* RIGHT — image */}
           <div className="w-full xl:w-[50%]">
             <div className="relative mx-auto aspect-[4/4] w-full max-w-[560px]">
-              <Image
+              <div>
+                <Image
+                  src={cube1}
+                  height="140"
+                  width="140"
+                  alt="cube1"
+                  className="absolute  w-[100px] h-[100px] bottom-0 left-20 md:w-[125] md:h-[140] md:bottom-7 md:left-23"
+                />
+                <Image
+                  src={cube2}
+                  height="140"
+                  width="140"
+                  alt="cube1"
+                  className="absolute w-[100px] h-[100px] bottom-24 left-10 md:w-[140] md:h-[140] md:bottom-38 md:left-5"
+                />
+                <Image
+                  src={cube3}
+                  height="140"
+                  width="140"
+                  alt="cube1"
+                  className="absolute w-[100px] h-[100px] bottom-17 left-31 md:w-[140] md:h-[140] md:bottom-32 md:left-35"
+                />
+                <Image
+                  src={cube4}
+                  height="140"
+                  width="140"
+                  alt="cube1"
+                  className="absolute w-[100px] h-[100px] bottom-26 right-10 md:w-[140] md:h-[140] md:bottom-40 md:right-26"
+                />
+                <Image
+                  src={cube5}
+                  height="150"
+                  width="150"
+                  alt="cube1"
+                  className="absolute w-[120px] h-[120px] bottom-48 right-10 md:w-[150] md:h-[150] md:bottom-72 md:right-22"
+                />
+                <Image
+                  src={cube6}
+                  height="160"
+                  width="160"
+                  alt="cube1"
+                  className="absolute w-[120px] h-[120px] top-18 left-24 md:w-[160] md:h-[160] md:top-24 md:left-32"
+                />
+                <Image
+                  src={cube7}
+                  height="160"
+                  width="160"
+                  alt="cube1"
+                  className="absolute w-[120px] h-[120px] -top-[18px] right-14 md:w-[160] md:h-[160] -md:top-[40px] md:right-28"
+                />
+              </div>
+            </div>
+            {/* <Image
                 src="/images/about/abt.jpg"
                 alt="Ivey Solutions — Web, Crypto, and Moderation Services"
                 fill
                 priority
                 className="rounded-3xl object-cover"
-              />
-              {/* glow accents */}
-              <span className="absolute -left-6 top-8 h-16 w-16 rounded-full bg-[linear-gradient(120deg,#5c3afa_0%,#a868fa_50%,#3dabf4_100%)] opacity-50 blur-xl" />
-              <span className="absolute -right-8 bottom-8 h-28 w-28 rounded-full bg-[linear-gradient(120deg,#5c3afa_0%,#a868fa_50%,#3dabf4_100%)] opacity-40 blur-[32px]" />
-            </div>
+              /> */}
+
+            {/* glow accents */}
+            <span className="absolute -left-6 top-8 h-16 w-16 rounded-full bg-[linear-gradient(120deg,#5c3afa_0%,#a868fa_50%,#3dabf4_100%)] opacity-50 blur-xl" />
+            <span className="absolute -right-8 bottom-8 h-28 w-28 rounded-full bg-[linear-gradient(120deg,#5c3afa_0%,#a868fa_50%,#3dabf4_100%)] opacity-40 blur-[32px]" />
           </div>
         </div>
       </div>

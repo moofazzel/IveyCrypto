@@ -37,7 +37,7 @@ export default function Footer({
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-[#0B0A0F] to-transparent" />
 
       {/* content */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* top row */}
         <div className="flex items-center justify-between pb-24">
           {/* logo */}
@@ -113,8 +113,11 @@ export default function Footer({
         {/* bottom row */}
         <div className="flex flex-col items-center justify-between gap-3 py-8 text-md text-white/70 sm:flex-row">
           <p className="whitespace-pre;">
-            © Ivey Solutions ; made by{" "}
-            <Link target="_blank" href="https://www.aptecode.com/" className="text-orange-500">
+            <Link
+              target="_blank"
+              href="https://www.aptecode.com/"
+              className="text-orange-500"
+            >
               APTECODE
             </Link>{" "}
           </p>
@@ -125,10 +128,10 @@ export default function Footer({
             </Link>
             <span className="text-white/30">|</span>
             <Link
-              href="mailto:contact@iveysolutions.com"
+              href="mailto:support@ivey.solutions"
               className="hover:text-white transition-colors"
             >
-              contact@iveysolutions.com
+              support@ivey.solutions
             </Link>
           </div>
         </div>
