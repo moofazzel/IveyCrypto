@@ -19,7 +19,7 @@ export default function PortfolioPage() {
 
         {/* content */}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="min-h-[68vh] sm:min-h-[72vh] lg:min-h-[78vh] grid place-items-center">
+          <div className="min-h-[40vh] sm:min-h-[50vh] lg:min-h-[55vh] grid place-items-center">
             <div className="max-w-3xl text-center mx-auto">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
                 Projects that turn{" "}

@@ -168,7 +168,7 @@ export default function PortfolioGallery() {
         {/* Header */}
         <header className="mb-8 md:mb-10 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white">
-            Portfolio Gallery
+            Our Projects
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto mt-3">
             A handpicked selection of recent work — clean builds, fast
@@ -178,7 +178,7 @@ export default function PortfolioGallery() {
 
         {/* Tabs */}
         <div className="w-full text-center mb-8">
-          <ul className="inline-flex w-auto gap-2 rounded-lg bg-neutral-800 p-1">
+          <ul className="inline-flex w-auto gap-2 rounded-full bg-neutral-800 p-1">
             {TABS.map((t) => (
               <li key={t.id}>
                 <button

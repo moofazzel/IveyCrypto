@@ -1,10 +1,18 @@
 "use client";
 
-import { Award, Briefcase, Users } from "lucide-react";
+import {
+  Award,
+  Briefcase,
+  Megaphone,
+  Rocket,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import CountUp from "react-countup";
 
 export default function StatsSection() {
   const stats = [
+    // — Core company stats —
     {
       id: 1,
       icon: <Award className="w-6 h-6 sm:w-7 sm:h-7 text-white/80" />,
@@ -23,20 +31,43 @@ export default function StatsSection() {
       id: 3,
       icon: <Users className="w-6 h-6 sm:w-7 sm:h-7 text-white/80" />,
       value: 1000,
-
       suffix: "+",
-      label: "Clients Served All over the World",
+      label: "Clients Served Globally",
+    },
+
+    // — Service-specific stats —
+    {
+      id: 4,
+      icon: <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-white/80" />,
+      value: 180,
+      suffix: "+",
+      label: "24/7 Modding Communities Managed",
+    },
+    {
+      id: 5,
+      icon: <Rocket className="w-6 h-6 sm:w-7 sm:h-7 text-white/80" />,
+      value: 1200,
+      suffix: "+",
+      label: "Raid Campaigns Executed",
+    },
+    {
+      id: 6,
+      icon: <Megaphone className="w-6 h-6 sm:w-7 sm:h-7 text-white/80" />,
+      value: 25000,
+      suffix: "+",
+      label: "Shilling Posts & Mentions Delivered",
     },
   ];
 
   return (
     <section className="bg-[#0C0B11] border-y border-white/5">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className={`flex items-center gap-4 rounded-2xl bg-[#111017]/80 backdrop-blur-sm border border-white/10 p-5 sm:p-6 `}
+              className="flex items-center gap-4 rounded-2xl bg-[#111017]/80 border border-white/10 
+                         backdrop-blur-sm p-5 sm:p-6"
             >
               <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/5 flex items-center justify-center">
                 {stat.icon}

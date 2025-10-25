@@ -1,6 +1,7 @@
 // app/(site)/components/PortfolioGallery.tsx
 "use client";
 
+import GradientButton from "@/components/shared/GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -106,18 +107,24 @@ export default function PortfolioGallery() {
 
   return (
     <section className="w-full bg-[#0B0710]">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 pb-16 md:pb-20">
         {/* Header */}
         <header className="mb-8 md:mb-10 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white">
-            Portfolio Gallery
+            Our Projects
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto mt-3">
             A handpicked selection of recent work — clean builds, fast
             performance, and designs that convert.
           </p>
         </header>
-
+        <div className="flex justify-end mb-[30px]">
+          <Link href="/portfolio">
+            <GradientButton className="w-[220px]">
+              View All Projects
+            </GradientButton>
+          </Link>
+        </div>
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 justify-items-center">
           {items.map((it) => {

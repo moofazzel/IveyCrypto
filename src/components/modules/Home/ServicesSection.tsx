@@ -40,8 +40,28 @@ export const ServicesSection: React.FC = () => {
           </p>
         </div>
 
+        {/* Bottom row: three narrow cards (w-[33%]) */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {narrow.map((s) => {
+            const Icon = getIcon(s.iconName);
+            return (
+              <article
+                key={s.id}
+                className="w-full sm:w-[48%] md:w-[31%] md:m-[3px] rounded-xl bg-[#131416] border border-[#221b2a] p-8 text-center shadow-[0_6px_20px_rgba(0,0,0,0.6)]"
+              >
+                <div className="mx-auto w-24 h-24 rounded-lg bg-gradient-to-tr from-[#111018] to-[#19141b] flex items-center justify-center border border-[#222]">
+                  <Icon size={44} className="text-gray-200" />
+                </div>
+
+                <h4 className="text-lg font-semibold mt-6">{s.title}</h4>
+                {/* <p className="text-gray-400 mt-1">{s.subtitle}</p> */}
+                <p className="text-gray-300 mt-4">{s.description}</p>
+              </article>
+            );
+          })}
+        </div>
         {/* Top row: two wide cards (w-[50%]) */}
-        <div className="flex flex-wrap justify-center gap-6 mb-[24px]">
+        <div className="flex flex-wrap justify-center gap-6 mb-[24px] mt-[28px]">
           {wide.map((s) => {
             const Icon = getIcon(s.iconName);
             return (
@@ -57,27 +77,6 @@ export const ServicesSection: React.FC = () => {
                   {/* <p className="text-gray-400 mt-1">{s.subtitle}</p> */}
                   <p className="text-gray-300 mt-3">{s.description}</p>
                 </div>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* Bottom row: three narrow cards (w-[33%]) */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {narrow.map((s) => {
-            const Icon = getIcon(s.iconName);
-            return (
-              <article
-                key={s.id}
-                className="w-full sm:w-[48%] md:w-[32%] rounded-xl bg-[#131416] border border-[#221b2a] p-8 text-center shadow-[0_6px_20px_rgba(0,0,0,0.6)]"
-              >
-                <div className="mx-auto w-24 h-24 rounded-lg bg-gradient-to-tr from-[#111018] to-[#19141b] flex items-center justify-center border border-[#222]">
-                  <Icon size={44} className="text-gray-200" />
-                </div>
-
-                <h4 className="text-lg font-semibold mt-6">{s.title}</h4>
-                {/* <p className="text-gray-400 mt-1">{s.subtitle}</p> */}
-                <p className="text-gray-300 mt-4">{s.description}</p>
               </article>
             );
           })}
