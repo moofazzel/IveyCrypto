@@ -93,7 +93,7 @@ export default function Navbar() {
       <aside
         role="dialog"
         aria-modal="true"
-        className={`fixed right-0 top-0 z-[70] h-full w-[85%] max-w-sm bg-[#d9bb79] text-black shadow-xl
+        className={`fixed right-0 top-0 z-[70] h-full w-[85%] max-w-sm bg-[#000000] text-black shadow-xl
         transition-transform duration-300 ease-out will-change-transform lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
@@ -105,7 +105,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="grid h-10 w-10 place-items-center rounded-sm border border-black/30"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5 bg-white" />
           </button>
         </div>
 
@@ -117,7 +117,7 @@ export default function Navbar() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   className={`block text-[17px] leading-none ${
-                    i === 0 ? "text-[#3B82F6] font-medium" : "text-black"
+                    i === 0 ? "text-[#3B82F6] font-medium" : "text-white"
                   } hover:underline underline-offset-4`}
                 >
                   {l.label}
