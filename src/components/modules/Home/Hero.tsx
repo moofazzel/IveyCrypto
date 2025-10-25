@@ -31,7 +31,7 @@ export default function Hero() {
             </p>
 
             {/* Stats row */}
-            <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur text-center sm:text-left">
                 <div className="flex items-center justify-center gap-3 sm:justify-start">
                   <div className="rounded-lg border border-white/10 bg-black/20 p-2">
@@ -64,7 +64,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur text-center sm:text-left">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur text-center sm:text-left hidden sm:block">
                 <div className="flex items-center justify-center gap-3 sm:justify-start">
                   <div className="rounded-lg border border-white/10 bg-black/20 p-2">
                     <ShieldCheck size={20} className="text-white/90" />
