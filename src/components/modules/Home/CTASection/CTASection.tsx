@@ -32,7 +32,7 @@ export default function CTASection() {
       {/* <div className="absolute inset-0 -z-10 bg-black/50" /> */}
 
       {/* ✅ Content */}
-      <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6">
+      <div className="relative mx-auto max-w-xl px-4 text-center sm:px-6">
         <h2
           id="cta-heading"
           className="text-balance text-3xl md:text-6xl font-extrabold tracking-tighter text-white"
@@ -45,7 +45,7 @@ export default function CTASection() {
         </p>
 
         <div className="mt-8">
-          <Link href="/https://t.me/mahmud_3322">
+          <Link target="_blank" href="https://t.me/mahmud_3322">
             <GradientButton className="w-52">
               <span className="relative z-10">Send a Message</span>
             </GradientButton>

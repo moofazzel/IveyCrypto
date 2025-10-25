@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="w-full bg-[#0C0912] py-24 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto grid w-full max-w-6xl items-start gap-12 lg:grid-cols-[60%_40%] pt-12">
+      <div className="mx-auto grid w-full max-w-7xl items-start gap-12 lg:grid-cols-[60%_40%] pt-12">
         {/* LEFT: single animated testimonial card (no back layers, no 3D) */}
         <div className="relative min-h-[340px]">
           <AnimatePresence mode="popLayout" custom={dir}>
